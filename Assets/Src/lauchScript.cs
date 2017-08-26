@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class lauchScript : MonoBehaviour {
 	public Button myButton;
+	public bool animate = false;
 	// Use this for initialization
 	void Start () {
 		Button btn = myButton.GetComponent<Button>();
@@ -19,6 +20,6 @@ public class lauchScript : MonoBehaviour {
 
 	void TaskOnClick() {
 		Debug.Log ("Button clicked");
-		SceneManager.LoadScene("Scenes/Scene01");
+		this.animate = true;
 	}
 }

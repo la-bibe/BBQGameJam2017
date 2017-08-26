@@ -1,35 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraVerticalFollower : MonoBehaviour {
 
-    public GameObject player;
+    public GameObject associatedPlayer;
+    public GameObject clonePlayer;
 
-    public Color colorYin;
-    public Color colorYang;
+    public string obstaclesTag;
+    public string oppositeObstaclesTag;
 
-    private GameObject[] obstacles;
+    public Color associatedColor;
 
-	void Start ()
+    void Start ()
     {
-        this.obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
+        GameObject[] obstacles;
+        obstacles = GameObject.FindGameObjectsWithTag(this.obstaclesTag);
 
-        foreach (GameObject obstacle in this.obstacles)
+        foreach (GameObject obstacle in obstacles)
         {
-            obstacle.GetComponent<SpriteRenderer>().color = this.colorYin;
+            obstacle.GetComponent<SpriteRenderer>().color = this.associatedColor;
         }
 
-        player.GetComponent<SpriteRenderer>().color = this.colorYin;
+        obstacles = GameObject.FindGameObjectsWithTag(this.oppositeObstaclesTag);
 
-        this.GetComponent<Camera>().backgroundColor = this.colorYang;
+        foreach (GameObject obstacle in obstacles)
+        {
+            obstacle.GetComponent<ObstacleCollider>().setPlayerIgnore(this.associatedPlayer);
+            obstacle.GetComponent<ObstacleCollider>().setPlayerIgnore(this.clonePlayer);
+        }
+
+        associatedPlayer.GetComponent<SpriteRenderer>().color = this.associatedColor;
+        clonePlayer.GetComponent<SpriteRenderer>().color = this.associatedColor;
     }
 	
 	void Update ()
     {
         this.transform.position = new Vector3(
             this.transform.position.x,
-            this.player.transform.position.y,
+            this.associatedPlayer.transform.position.y,
             this.transform.position.z
             );
     }
