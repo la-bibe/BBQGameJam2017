@@ -56,10 +56,11 @@ public class ScoreManager : MonoBehaviour {
     }
 
 	void Start () {
-        this.gui.enabled = false;
+        //this.gui.enabled = false;
     }
 	
 	void Update () {
+        /*
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             this.gui.enabled = true;
@@ -67,5 +68,6 @@ public class ScoreManager : MonoBehaviour {
         {
             this.gui.enabled = false;
         }
+        //*/
 	}
 }
