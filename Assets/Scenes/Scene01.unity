@@ -877,9 +877,10 @@ GameObject:
   - component: {fileID: 703890633}
   - component: {fileID: 703890632}
   - component: {fileID: 703890631}
+  - component: {fileID: 703890634}
   m_Layer: 0
   m_Name: Button0001_inverse
-  m_TagString: Obstacle
+  m_TagString: ObstacleYang
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -891,7 +892,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 703890629}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.53, y: 4.19, z: 0}
+  m_LocalPosition: {x: 4.53, y: 4.19, z: -5.44}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 0.29999998}
   m_Children: []
   m_Father: {fileID: 58869884}
@@ -971,7 +972,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0a079d8b68176fd42a38227feaf59021, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -980,6 +981,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &703890634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 703890629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fcf0de585c691d4baa56c07a876beaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerYin: {fileID: 931083836}
+  playerYang: {fileID: 951359327}
 --- !u!1 &828883081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,7 +2040,7 @@ GameObject:
   - component: {fileID: 1366234313}
   m_Layer: 0
   m_Name: Door0001
-  m_TagString: Obstacle
+  m_TagString: ObstacleYang
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2077,7 +2091,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bf68bce9704473045b6f73b3bb42eba7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2122,10 +2136,10 @@ MonoBehaviour:
   movingSpeed: 100
   originalPosition: {x: 5.51, y: 5.02}
   activatedPosition: {x: 5.51, y: 4.55}
-  triggeredRotatingObstacle: 0
-  rotatingSpeed: 10
+  triggeredRotatingObstacle: 1
+  rotatingSpeed: 3000
   originalRotation: 0
-  activatedRotation: 0
+  activatedRotation: -90
   triggeredHiddenObstacle: 0
   originalHidden: 0
   activatedHidden: 0
@@ -2169,8 +2183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fcf0de585c691d4baa56c07a876beaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerYin: {fileID: 0}
-  playerYang: {fileID: 0}
+  playerYin: {fileID: 931083836}
+  playerYang: {fileID: 951359327}
 --- !u!1 &1523701362
 GameObject:
   m_ObjectHideFlags: 0
@@ -2212,9 +2226,10 @@ GameObject:
   - component: {fileID: 1627540488}
   - component: {fileID: 1627540487}
   - component: {fileID: 1627540489}
+  - component: {fileID: 1627540490}
   m_Layer: 0
   m_Name: Button0001
-  m_TagString: Obstacle
+  m_TagString: ObstacleYang
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2226,7 +2241,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1627540485}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.19, y: 4.09, z: 0}
+  m_LocalPosition: {x: 6.19, y: 4.09, z: -3.93}
   m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 58869884}
@@ -2292,7 +2307,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0a079d8b68176fd42a38227feaf59021, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.328, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2315,6 +2330,19 @@ MonoBehaviour:
   objectToMove: {fileID: 1366234307}
   invertedAction: 0
   multipleUse: 0
+--- !u!114 &1627540490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1627540485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fcf0de585c691d4baa56c07a876beaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerYin: {fileID: 931083836}
+  playerYang: {fileID: 951359327}
 --- !u!1 &1758612943
 GameObject:
   m_ObjectHideFlags: 0
