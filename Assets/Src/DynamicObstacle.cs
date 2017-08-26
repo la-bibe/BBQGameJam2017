@@ -6,17 +6,17 @@ public class DynamicObstacle : MonoBehaviour {
 
     public bool activated = false;
 
-    public bool movingObstacle = false;
+    public bool triggeredMovingObstacle = false;
     public float movingSpeed = 100;
     public Vector2 originalPosition;
     public Vector2 activatedPosition;
 
-    public bool rotatingObstacle = false;
-    public float rotatingSpeed = 100;
-    public Vector2 originalRotation;
-    public Vector2 activatedRotation;
+    public bool triggeredRotatingObstacle = false;
+    public float rotatingSpeed = 10;
+    public float originalRotation;
+    public float activatedRotation;
 
-    public bool hiddenObstacle = false;
+    public bool triggeredHiddenObstacle = false;
     public bool originalHidden = false;
     public bool activatedHidden = false;
 
@@ -25,11 +25,12 @@ public class DynamicObstacle : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D objRigidbody;
 
-    private float allowedPrecisionLoss = 0.01f;
+    private float allowedPositionPrecisionLoss = 0.01f;
+    private float allowedRotationPrecisionLoss = 0.01f;
 
     private void Start()
     {
-        if (this.movingObstacle)
+        if (this.triggeredMovingObstacle)
         {
             this.transform.position = this.originalPosition;
         }
@@ -39,7 +40,7 @@ public class DynamicObstacle : MonoBehaviour {
 
     private void actualiseHidden()
     {
-        if (this.hiddenObstacle)
+        if (this.triggeredHiddenObstacle)
         {
             if (this.activated)
             {
@@ -56,7 +57,7 @@ public class DynamicObstacle : MonoBehaviour {
 
     private void actualisePosition()
     {
-        if (this.movingObstacle)
+        if (this.triggeredMovingObstacle)
         {
             Vector2 velocity = new Vector2(
                 this.movingSpeed * Time.deltaTime,
@@ -65,13 +66,13 @@ public class DynamicObstacle : MonoBehaviour {
 
             if (this.activated)
             {
-                velocity.x *= (Mathf.Abs(this.transform.position.x - this.activatedPosition.x) < this.allowedPrecisionLoss ?
+                velocity.x *= (Mathf.Abs(this.transform.position.x - this.activatedPosition.x) < this.allowedPositionPrecisionLoss ?
                     0 :
                     (this.transform.position.x < this.activatedPosition.x ?
                     1 :
                     -1
                     ));
-                velocity.y *= (Mathf.Abs(this.transform.position.y - this.activatedPosition.y) < this.allowedPrecisionLoss ?
+                velocity.y *= (Mathf.Abs(this.transform.position.y - this.activatedPosition.y) < this.allowedPositionPrecisionLoss ?
                     0 :
                     (this.transform.position.y < this.activatedPosition.y ?
                     1 :
@@ -80,13 +81,13 @@ public class DynamicObstacle : MonoBehaviour {
             }
             else
             {
-                velocity.x *= (Mathf.Abs(this.transform.position.x - this.originalPosition.x) < this.allowedPrecisionLoss ?
+                velocity.x *= (Mathf.Abs(this.transform.position.x - this.originalPosition.x) < this.allowedPositionPrecisionLoss ?
                     0 :
                     (this.transform.position.x < this.originalPosition.x ?
                     1 :
                     -1
                     ));
-                velocity.y *= (Mathf.Abs(this.transform.position.y - this.originalPosition.y) < this.allowedPrecisionLoss ?
+                velocity.y *= (Mathf.Abs(this.transform.position.y - this.originalPosition.y) < this.allowedPositionPrecisionLoss ?
                     0 :
                     (this.transform.position.y < this.originalPosition.y ?
                     1 :
@@ -94,6 +95,36 @@ public class DynamicObstacle : MonoBehaviour {
                     ));
             }
             this.objRigidbody.velocity = velocity;
+        }
+    }
+
+    private void actualiseRotation()
+    {
+        if (this.triggeredRotatingObstacle)
+        {
+            float angularVelocity = this.rotatingSpeed * Time.deltaTime;
+            float actualRotation = this.transform.rotation.eulerAngles.z;
+            actualRotation = (actualRotation > 180 ? actualRotation - 360 : actualRotation);
+
+            if (this.activated)
+            {
+                angularVelocity *= (Mathf.Abs(actualRotation - this.activatedRotation) < this.allowedPositionPrecisionLoss ?
+                    0 :
+                    (actualRotation < this.activatedRotation ?
+                    1 :
+                    -1
+                    ));
+            }
+            else
+            {
+                angularVelocity *= (Mathf.Abs(actualRotation - this.originalRotation) < this.allowedPositionPrecisionLoss ?
+                    0 :
+                    (actualRotation < this.originalRotation ?
+                    1 :
+                    -1
+                    ));
+            }
+            this.objRigidbody.angularVelocity = angularVelocity;
         }
     }
 
@@ -106,5 +137,6 @@ public class DynamicObstacle : MonoBehaviour {
     void Update()
     {
         this.actualisePosition();
+        this.actualiseRotation();
     }
 }
