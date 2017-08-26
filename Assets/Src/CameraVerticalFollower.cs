@@ -2,47 +2,41 @@
 
 public class CameraVerticalFollower : MonoBehaviour {
 
-    public GameObject playerYin;
-    public GameObject playerYang;
+    public GameObject associatedPlayer;
+    public GameObject clonePlayer;
 
-    public Color colorYin;
-    public Color colorYang;
+    public string obstaclesTag;
+    public string oppositeObstaclesTag;
 
-    private GameObject[] obstaclesYin;
-    private GameObject[] obstaclesYang;
-    private GameObject onFocus;
+    public Color associatedColor;
 
     void Start ()
     {
-        this.onFocus = this.playerYin;
-        this.obstaclesYin = GameObject.FindGameObjectsWithTag("ObstacleYin");
-        this.obstaclesYang = GameObject.FindGameObjectsWithTag("ObstacleYang");
+        GameObject[] obstacles;
+        obstacles = GameObject.FindGameObjectsWithTag(this.obstaclesTag);
 
-        foreach (GameObject obstacleYin in this.obstaclesYin)
+        foreach (GameObject obstacle in obstacles)
         {
-            obstacleYin.GetComponent<SpriteRenderer>().color = this.colorYin;
-            obstacleYin.GetComponent<ObstacleCollider>().setPlayerIgnore(this.playerYang);
+            obstacle.GetComponent<SpriteRenderer>().color = this.associatedColor;
         }
 
-        foreach (GameObject obstacleYang in this.obstaclesYang)
+        obstacles = GameObject.FindGameObjectsWithTag(this.oppositeObstaclesTag);
+
+        foreach (GameObject obstacle in obstacles)
         {
-            obstacleYang.GetComponent<SpriteRenderer>().color = this.colorYang;
-            obstacleYang.GetComponent<ObstacleCollider>().setPlayerIgnore(this.playerYin);
+            obstacle.GetComponent<ObstacleCollider>().setPlayerIgnore(this.associatedPlayer);
+            obstacle.GetComponent<ObstacleCollider>().setPlayerIgnore(this.clonePlayer);
         }
 
-        playerYin.GetComponent<SpriteRenderer>().color = this.colorYin;
-        playerYang.GetComponent<SpriteRenderer>().color = this.colorYang;
-
-        this.GetComponent<Camera>().backgroundColor = this.colorYin;
+        associatedPlayer.GetComponent<SpriteRenderer>().color = this.associatedColor;
+        clonePlayer.GetComponent<SpriteRenderer>().color = this.associatedColor;
     }
 	
 	void Update ()
     {
-        if (Input.GetMouseButtonDown(0))
-            this.onFocus = (this.onFocus == this.playerYin) ? this.playerYang : this.playerYin;
         this.transform.position = new Vector3(
             this.transform.position.x,
-            this.onFocus.transform.position.y,
+            this.associatedPlayer.transform.position.y,
             this.transform.position.z
             );
     }
