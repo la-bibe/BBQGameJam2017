@@ -1,38 +1,46 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraVerticalFollower : MonoBehaviour {
 
-    public GameObject playerA;
-	public GameObject playerB;
-	private GameObject onFocus;
+    public GameObject playerYin;
+    public GameObject playerYang;
+
     public Color colorYin;
     public Color colorYang;
 
-    private GameObject[] obstacles;
+    private GameObject[] obstaclesYin;
+    private GameObject[] obstaclesYang;
+    private GameObject onFocus;
 
-	void Start ()
+    void Start ()
     {
-        this.obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
-		this.onFocus = playerA;
-        foreach (GameObject obstacle in this.obstacles)
+        this.onFocus = this.playerYin;
+        this.obstaclesYin = GameObject.FindGameObjectsWithTag("ObstacleYin");
+        this.obstaclesYang = GameObject.FindGameObjectsWithTag("ObstacleYang");
+
+        foreach (GameObject obstacleYin in this.obstaclesYin)
         {
-            obstacle.GetComponent<SpriteRenderer>().color = this.colorYin;
+            obstacleYin.GetComponent<SpriteRenderer>().color = this.colorYin;
         }
 
-        playerA.GetComponent<SpriteRenderer>().color = this.colorYin;
+        foreach (GameObject obstacleYang in this.obstaclesYang)
+        {
+            obstacleYang.GetComponent<SpriteRenderer>().color = this.colorYang;
+        }
 
-        this.GetComponent<Camera>().backgroundColor = this.colorYang;
+        playerYin.GetComponent<SpriteRenderer>().color = this.colorYin;
+        playerYang.GetComponent<SpriteRenderer>().color = this.colorYang;
+
+        this.GetComponent<Camera>().backgroundColor = this.colorYin;
     }
 	
 	void Update ()
     {
-		if (Input.GetMouseButtonDown(0))
-			this.onFocus = (this.onFocus == this.playerA) ? this.playerB : this.playerA;
+        if (Input.GetMouseButtonDown(0))
+            this.onFocus = (this.onFocus == this.playerYin) ? this.playerYang : this.playerYin;
         this.transform.position = new Vector3(
             this.transform.position.x,
-			this.onFocus.transform.position.y,
+            this.onFocus.transform.position.y,
             this.transform.position.z
             );
     }
