@@ -12,7 +12,7 @@ public class ButtonTriggerController : MonoBehaviour {
     {
         if (collider.gameObject.tag == "Player")
         {
-            objectToMove.GetComponent<DynamicObstacle>().moved = !this.invertedAction;
+            objectToMove.GetComponent<DynamicObstacle>().setActivated(!this.invertedAction);
             if (!multipleUse)
             {
                 Destroy(this.gameObject);
