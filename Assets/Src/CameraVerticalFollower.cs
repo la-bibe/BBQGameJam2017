@@ -21,11 +21,13 @@ public class CameraVerticalFollower : MonoBehaviour {
         foreach (GameObject obstacleYin in this.obstaclesYin)
         {
             obstacleYin.GetComponent<SpriteRenderer>().color = this.colorYin;
+            obstacleYin.GetComponent<ObstacleCollider>().setPlayerIgnore(this.playerYang);
         }
 
         foreach (GameObject obstacleYang in this.obstaclesYang)
         {
             obstacleYang.GetComponent<SpriteRenderer>().color = this.colorYang;
+            obstacleYang.GetComponent<ObstacleCollider>().setPlayerIgnore(this.playerYin);
         }
 
         playerYin.GetComponent<SpriteRenderer>().color = this.colorYin;

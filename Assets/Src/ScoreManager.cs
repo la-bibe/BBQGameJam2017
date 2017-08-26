@@ -60,7 +60,7 @@ public class ScoreManager : MonoBehaviour {
     }
 	
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             this.gui.enabled = true;
         } else if (Input.GetKeyUp(KeyCode.Tab))
