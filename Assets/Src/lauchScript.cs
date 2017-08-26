@@ -19,6 +19,6 @@ public class lauchScript : MonoBehaviour {
 
 	void TaskOnClick() {
 		Debug.Log ("Button clicked");
-		SceneManager.LoadScene("Scene01");
+		SceneManager.LoadScene("Scenes/Scene01");
 	}
 }
