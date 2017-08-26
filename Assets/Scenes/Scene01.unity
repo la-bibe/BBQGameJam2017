@@ -162,7 +162,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 208279216}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: -15, z: 0}
+  m_LocalPosition: {x: -5, y: -15, z: -1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 392762303}
@@ -316,7 +316,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 546498391}
-  - {fileID: 1066879434}
   - {fileID: 967259984}
   - {fileID: 1017308466}
   m_Father: {fileID: 683128640}
@@ -333,7 +332,7 @@ GameObject:
   - component: {fileID: 546498392}
   m_Layer: 0
   m_Name: Yang_Left
-  m_TagString: Untagged
+  m_TagString: ObstacleYang
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -404,7 +403,6 @@ GameObject:
   - component: {fileID: 601576908}
   - component: {fileID: 601576907}
   - component: {fileID: 601576906}
-  - component: {fileID: 601576905}
   - component: {fileID: 601576904}
   - component: {fileID: 601576903}
   m_Layer: 0
@@ -455,13 +453,6 @@ MonoBehaviour:
   obstaclesTag: ObstacleYang
   oppositeObstaclesTag: ObstacleYin
   associatedColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!81 &601576905
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 601576901}
-  m_Enabled: 1
 --- !u!124 &601576906
 Behaviour:
   m_ObjectHideFlags: 0
@@ -685,7 +676,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 931083836}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: -15, z: -0.8}
+  m_LocalPosition: {x: 5, y: -15, z: -1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1077110824}
@@ -770,7 +761,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 951359327}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: -15, z: 0}
+  m_LocalPosition: {x: -5, y: -15, z: -1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1077110824}
@@ -787,7 +778,7 @@ GameObject:
   - component: {fileID: 967259985}
   m_Layer: 0
   m_Name: Yin_Left
-  m_TagString: Untagged
+  m_TagString: ObstacleYin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -803,7 +794,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 530425300}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &967259985
 SpriteRenderer:
@@ -856,9 +847,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1017308466}
   - component: {fileID: 1017308467}
+  - component: {fileID: 1017308468}
   m_Layer: 0
   m_Name: Yin_Right
-  m_TagString: Untagged
+  m_TagString: ObstacleYang
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -874,7 +866,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 530425300}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1017308467
 SpriteRenderer:
@@ -918,6 +910,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1017308468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1017308465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c427e0987408a41a0257cd1569faf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 208279216}
+  oppositeHost: {fileID: 931083836}
 --- !u!1 &1058660980
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +949,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1309670782}
+  - {fileID: 1066879434}
   - {fileID: 1349208353}
   m_Father: {fileID: 1523701363}
   m_RootOrder: 0
@@ -958,8 +964,8 @@ GameObject:
   - component: {fileID: 1066879434}
   - component: {fileID: 1066879435}
   m_Layer: 0
-  m_Name: Yang_Right
-  m_TagString: Untagged
+  m_Name: Yin_Right
+  m_TagString: ObstacleYin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -974,7 +980,7 @@ Transform:
   m_LocalPosition: {x: 5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 530425300}
+  m_Father: {fileID: 1058660981}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1066879435
@@ -1119,9 +1125,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1309670782}
   - component: {fileID: 1309670783}
+  - component: {fileID: 1309670784}
   m_Layer: 0
-  m_Name: Map_01_Left_Yin
-  m_TagString: Untagged
+  m_Name: Yin_Left
+  m_TagString: ObstacleYin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1181,6 +1188,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1309670784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309670781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c427e0987408a41a0257cd1569faf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 931083836}
+  oppositeHost: {fileID: 208279216}
 --- !u!1 &1349208352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,8 +1211,8 @@ GameObject:
   - component: {fileID: 1349208353}
   - component: {fileID: 1349208354}
   m_Layer: 0
-  m_Name: Map_01_Right_Yang
-  m_TagString: Untagged
+  m_Name: Yang_Right
+  m_TagString: ObstacleYang
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1208,7 +1228,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1058660981}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1349208354
 SpriteRenderer:
@@ -1276,7 +1296,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1369100568}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: -15, z: -0.8}
+  m_LocalPosition: {x: 5, y: -15, z: -1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 392762303}
@@ -1464,7 +1484,6 @@ GameObject:
   - component: {fileID: 2060663660}
   - component: {fileID: 2060663659}
   - component: {fileID: 2060663658}
-  - component: {fileID: 2060663657}
   - component: {fileID: 2060663662}
   - component: {fileID: 2060663663}
   m_Layer: 0
@@ -1474,13 +1493,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &2060663657
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2060663656}
-  m_Enabled: 1
 --- !u!124 &2060663658
 Behaviour:
   m_ObjectHideFlags: 0
