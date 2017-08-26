@@ -24,8 +24,9 @@ public class CameraVerticalFollower : MonoBehaviour {
 
         foreach (GameObject obstacle in obstacles)
         {
+            obstacle.AddComponent<PolygonCollider2D>();
+            obstacle.AddComponent<ObstacleCollider>();
             obstacle.GetComponent<ObstacleCollider>().setPlayerIgnore(this.associatedPlayer);
-            obstacle.GetComponent<ObstacleCollider>().setPlayerIgnore(this.clonePlayer);
         }
 
         associatedPlayer.GetComponent<SpriteRenderer>().color = this.associatedColor;

@@ -8,9 +8,10 @@ public class ClonedFollower : MonoBehaviour {
     public GameObject hostPlayer;
 
     void Update () {
-        this.transform.localPosition = new Vector2(
+        this.transform.localPosition = new Vector3(
             this.originalPlayer.transform.localPosition.x,
-            this.hostPlayer.transform.localPosition.y
+            this.hostPlayer.transform.localPosition.y,
+            -1
             );
 	}
 }
