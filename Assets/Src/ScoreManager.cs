@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour {
 
@@ -16,11 +17,14 @@ public class ScoreManager : MonoBehaviour {
 
     private int score;
 
+	public bool hasWon = false;
+
     private bool yinOk = false;
     private bool yangOk = false;
 
     private void winGame()
     {
+		this.hasWon = true;
         Debug.Log("Win");
     }
 
@@ -75,6 +79,7 @@ public class ScoreManager : MonoBehaviour {
         //this.gui.enabled = false;
     }
 	
+
 	void Update () {
         /*
         if (Input.GetKeyDown(KeyCode.Tab))
