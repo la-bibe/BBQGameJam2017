@@ -32,7 +32,7 @@ public class AnimateCloud : MonoBehaviour {
 
 	Vector3 getBegin(){
 		return new Vector3 (Random.Range (this.begin.x - 3, this.begin.x + 2),
-			Random.Range (this.begin.y - 6, this.begin.y + 2),
+			Random.Range (this.begin.y - 2, this.begin.y + 4),
 			0);
 	}
 
