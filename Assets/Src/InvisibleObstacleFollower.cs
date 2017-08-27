@@ -7,6 +7,8 @@ public class InvisibleObstacleFollower : MonoBehaviour {
     public GameObject player;
     public GameObject oppositeHost;
 
+    private PlayerController playerController;
+
     private void followPosition()
     {
         float offset = this.oppositeHost.transform.localPosition.y - this.player.transform.localPosition.y;
@@ -17,7 +19,7 @@ public class InvisibleObstacleFollower : MonoBehaviour {
     }
 
 	void Start () {
-		
+        this.playerController = this.player.GetComponent<PlayerController>();
 	}
 	
 	void Update () {
