@@ -11,6 +11,7 @@ TagManager:
   - RiceBowl3
   - RiceBowl4
   - RiceBowl5
+  - ScoreManager
   layers:
   - Default
   - TransparentFX
