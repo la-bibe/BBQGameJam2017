@@ -1271,9 +1271,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gui: {fileID: 0}
   playerYin: {fileID: 1024050004}
-  yinFinalPosition: {x: -1, y: 86}
+  playerYinClone: {fileID: 570214965}
+  yinFinalPosition: {x: -1, y: 86, z: -1}
   playerYang: {fileID: 1418582915}
-  yangFinalPosition: {x: 1, y: 86}
+  playerYangClone: {fileID: 1848383071}
+  yangFinalPosition: {x: 1, y: 86, z: -1}
 --- !u!114 &840747475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2570,9 +2572,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gui: {fileID: 0}
   playerYin: {fileID: 0}
-  yinFinalPosition: {x: 0, y: 0}
+  playerYinClone: {fileID: 0}
+  yinFinalPosition: {x: 0, y: 0, z: 0}
   playerYang: {fileID: 0}
-  yangFinalPosition: {x: 0, y: 0}
+  playerYangClone: {fileID: 0}
+  yangFinalPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &2137543293
 MonoBehaviour:
   m_ObjectHideFlags: 0
