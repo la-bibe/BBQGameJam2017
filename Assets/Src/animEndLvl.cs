@@ -18,7 +18,7 @@ public class animEndLvl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		bool tmp = GameObject.Find("CameraYang").GetComponent<ScoreManager>().hasWon && GameObject.Find("CameraYin").GetComponent<ScoreManager>().hasWon;
+		bool tmp = GameObject.Find("CameraYin").GetComponent<ScoreManager>().hasWon;
 		if (tmp) {
 			Debug.Log (tmp);
 			if (this.Vector3Cmp (this.transform.localScale, this.targetScale)) {

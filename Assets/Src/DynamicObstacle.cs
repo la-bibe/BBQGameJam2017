@@ -26,7 +26,7 @@ public class DynamicObstacle : MonoBehaviour {
     private Rigidbody2D objRigidbody;
 
     private float allowedPositionPrecisionLoss = 0.05f;
-    private float allowedRotationPrecisionLoss = 0.05f;
+    private float allowedRotationPrecisionLoss = 0.5f;
 
     private void Start()
     {
