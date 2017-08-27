@@ -1,0 +1,271 @@
+fileFormatVersion: 2
+guid: d7da3f1bc8d6bdc44b6110ae883f4d28
+timeCreated: 1503794701
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Yang_Left_0
+    21300002: Yang_Left_1
+    21300004: Yang_Left_2
+    21300006: Yang_Left_3
+    21300008: Yang_Left_4
+    21300010: Yang_Left_5
+    21300012: Yang_Left_6
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 1
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Yang_Left_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5696
+        width: 1000
+        height: 1304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yang_Left_1
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 5197
+        width: 606
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yang_Left_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2996
+        width: 1000
+        height: 2010
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yang_Left_3
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 2394
+        width: 206
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yang_Left_4
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 996
+        width: 305
+        height: 1109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yang_Left_5
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 197
+        width: 104
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Yang_Left_6
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 0
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape:
+    - - {x: 458.4781, y: -3106.541}
+      - {x: 428.8717, y: -3123.8745}
+      - {x: 407.47723, y: -3152.7617}
+      - {x: 400.18445, y: -3195.4922}
+      - {x: 403.52643, y: -3234.818}
+      - {x: 423.97382, y: -3269.0532}
+      - {x: 460.0578, y: -3295.5852}
+      - {x: 500, y: -3301.487}
+      - {x: 499.26227, y: -3099.9014}
+    - - {x: 382.53387, y: -1399.8062}
+      - {x: 323.02533, y: -1413.6882}
+      - {x: 271.5827, y: -1445.419}
+      - {x: 232.45905, y: -1487.008}
+      - {x: 202.32764, y: -1550.1538}
+      - {x: 198.3266, y: -2333.7349}
+      - {x: 211.3653, y: -2373.397}
+      - {x: 239.8357, y: -2425.1606}
+      - {x: 269.49872, y: -2453.0764}
+      - {x: 299.3086, y: -2477.3643}
+      - {x: 352.2035, y: -2497.3176}
+      - {x: 500, y: -2498.7783}
+      - {x: 500, y: -1399.8062}
+    - - {x: 438.51526, y: -703.27515}
+      - {x: 377.73914, y: -740.01514}
+      - {x: 329.78973, y: -794.70264}
+      - {x: 301.50684, y: -856.27563}
+      - {x: 298.7751, y: -952.99976}
+      - {x: 333.98102, y: -1017.0503}
+      - {x: 378.82086, y: -1057.6423}
+      - {x: 434.34235, y: -1089.8625}
+      - {x: 500, y: -1096.1475}
+      - {x: 500, y: -700.13257}
+    - - {x: 500, y: 1302.9463}
+      - {x: -344.50793, y: 1303.1763}
+      - {x: -411.61157, y: 1332.6675}
+      - {x: -455.77075, y: 1375.8198}
+      - {x: -490.57056, y: 1432.8105}
+      - {x: -497.966, y: 1494.3481}
+      - {x: -500, y: -499.22485}
+      - {x: -297.0028, y: -499.29468}
+      - {x: -298.84573, y: 544.42676}
+      - {x: -281.9531, y: 585.44727}
+      - {x: -256.58835, y: 622.3042}
+      - {x: -222.11212, y: 661.71484}
+      - {x: -173.12265, y: 689.39844}
+      - {x: -111.48511, y: 697.15674}
+      - {x: 500, y: 698.771}
+    - - {x: 100.14166, y: 300.78125}
+      - {x: 101.71295, y: -500.59473}
+      - {x: 500, y: -499.57422}
+      - {x: 500, y: 299.761}
+    - - {x: -97.5394, y: 1699.5259}
+      - {x: 500, y: 1697.935}
+      - {x: 500, y: 1997.169}
+      - {x: -95.958405, y: 1999.7915}
+    - - {x: -499.99997, y: 3500}
+      - {x: -500, y: 2229.4155}
+      - {x: -477.384, y: 2297.813}
+      - {x: -417.764, y: 2370.9185}
+      - {x: -327.87738, y: 2398.314}
+      - {x: 477.56354, y: 2399.0903}
+      - {x: 433.19495, y: 2380.706}
+      - {x: 402.0354, y: 2342.6978}
+      - {x: 395.10767, y: 2288.9966}
+      - {x: 418.4074, y: 2242.621}
+      - {x: 457.17847, y: 2209.8071}
+      - {x: 500, y: 2197.666}
+      - {x: 499.99997, y: 3500}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
