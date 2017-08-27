@@ -41,6 +41,8 @@ public class CameraVerticalFollower : MonoBehaviour {
 
         associatedPlayer.GetComponent<SpriteRenderer>().color = this.associatedColor;
         clonePlayer.GetComponent<SpriteRenderer>().color = this.associatedColor;
+
+        this.GetComponent<Camera>().backgroundColor = this.associatedColor;
         this.associatedPlayer.GetComponent<PlayerController>().setCanMove();
     }
 	
