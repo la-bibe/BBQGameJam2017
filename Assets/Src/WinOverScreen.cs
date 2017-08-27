@@ -13,6 +13,7 @@ public class WinOverScreen : MonoBehaviour {
     public GameObject text;
     public string nextScene;
     public string currentScene;
+    public Text timeText;
 
     private int numberRice;
 	// Use this for initialization
@@ -51,7 +52,7 @@ public class WinOverScreen : MonoBehaviour {
         {
             GameObject.FindGameObjectWithTag("RiceBowl" + i).GetComponent<SpriteRenderer>().sprite = this.activeBowl;
         }
-
+        this.timeText.GetComponent<Text>().text = "Time:" + scoreManager.GetComponent<GameObjectScore>().getTimer();
         Destroy(scoreManager);
 	}
 

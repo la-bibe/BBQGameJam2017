@@ -565,9 +565,10 @@ MonoBehaviour:
   activeBowl: {fileID: 21300000, guid: 61d310d1986cdba44a5ba115d3a93fdb, type: 3}
   buttonRestart: {fileID: 829697277}
   buttonContinue: {fileID: 1175574229}
-  text: {fileID: 0}
+  text: {fileID: 771831689}
   nextScene: 
   currentScene: 
+  timeText: {fileID: 771831691}
 --- !u!4 &689662565
 Transform:
   m_ObjectHideFlags: 0
