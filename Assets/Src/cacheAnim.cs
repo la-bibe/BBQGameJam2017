@@ -32,7 +32,7 @@ public class cacheAnim : MonoBehaviour {
 				);
 			}
 			else
-				SceneManager.LoadScene("Scenes/Scene01");
+				SceneManager.LoadScene("Scenes/Level 00");
 		}
 	}
 }

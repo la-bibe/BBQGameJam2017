@@ -16,11 +16,14 @@ public class ScoreManager : MonoBehaviour {
 
     private int score;
 
+	public bool hasWon = false;
+
     private bool yinOk = false;
     private bool yangOk = false;
 
     private void winGame()
     {
+		this.hasWon = true;
         Debug.Log("Win");
     }
 
