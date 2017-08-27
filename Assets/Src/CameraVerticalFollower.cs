@@ -10,6 +10,16 @@ public class CameraVerticalFollower : MonoBehaviour {
 
     public Color associatedColor;
 
+    public float animationSpeed = 10f;
+
+    private bool isInAnimation = true;
+    private float allowedPrecisionLoss = 0.01f;
+
+    private void launchAnimation()
+    {
+        this.isInAnimation = true;
+    }
+
     void Start ()
     {
         GameObject[] obstacles;
@@ -24,12 +34,16 @@ public class CameraVerticalFollower : MonoBehaviour {
 
         foreach (GameObject obstacle in obstacles)
         {
+            obstacle.AddComponent<PolygonCollider2D>();
+            obstacle.AddComponent<ObstacleCollider>();
             obstacle.GetComponent<ObstacleCollider>().setPlayerIgnore(this.associatedPlayer);
-            obstacle.GetComponent<ObstacleCollider>().setPlayerIgnore(this.clonePlayer);
         }
 
         associatedPlayer.GetComponent<SpriteRenderer>().color = this.associatedColor;
         clonePlayer.GetComponent<SpriteRenderer>().color = this.associatedColor;
+
+        this.GetComponent<Camera>().backgroundColor = this.associatedColor;
+        this.associatedPlayer.GetComponent<PlayerController>().setCanMove();
     }
 	
 	void Update ()
