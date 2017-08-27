@@ -25,14 +25,14 @@ public class DynamicObstacle : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D objRigidbody;
 
-    private float allowedPositionPrecisionLoss = 0.01f;
-    private float allowedRotationPrecisionLoss = 0.01f;
+    private float allowedPositionPrecisionLoss = 0.05f;
+    private float allowedRotationPrecisionLoss = 0.05f;
 
     private void Start()
     {
         if (this.triggeredMovingObstacle)
         {
-            this.transform.position = this.originalPosition;
+            this.transform.localPosition = this.originalPosition;
         }
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.objRigidbody = GetComponent<Rigidbody2D>();
@@ -66,30 +66,30 @@ public class DynamicObstacle : MonoBehaviour {
 
             if (this.activated)
             {
-                velocity.x *= (Mathf.Abs(this.transform.position.x - this.activatedPosition.x) < this.allowedPositionPrecisionLoss ?
+                velocity.x *= (Mathf.Abs(this.transform.localPosition.x - this.activatedPosition.x) < this.allowedPositionPrecisionLoss ?
                     0 :
-                    (this.transform.position.x < this.activatedPosition.x ?
+                    (this.transform.localPosition.x < this.activatedPosition.x ?
                     1 :
                     -1
                     ));
-                velocity.y *= (Mathf.Abs(this.transform.position.y - this.activatedPosition.y) < this.allowedPositionPrecisionLoss ?
+                velocity.y *= (Mathf.Abs(this.transform.localPosition.y - this.activatedPosition.y) < this.allowedPositionPrecisionLoss ?
                     0 :
-                    (this.transform.position.y < this.activatedPosition.y ?
+                    (this.transform.localPosition.y < this.activatedPosition.y ?
                     1 :
                     -1
                     ));
             }
             else
             {
-                velocity.x *= (Mathf.Abs(this.transform.position.x - this.originalPosition.x) < this.allowedPositionPrecisionLoss ?
+                velocity.x *= (Mathf.Abs(this.transform.localPosition.x - this.originalPosition.x) < this.allowedPositionPrecisionLoss ?
                     0 :
-                    (this.transform.position.x < this.originalPosition.x ?
+                    (this.transform.localPosition.x < this.originalPosition.x ?
                     1 :
                     -1
                     ));
-                velocity.y *= (Mathf.Abs(this.transform.position.y - this.originalPosition.y) < this.allowedPositionPrecisionLoss ?
+                velocity.y *= (Mathf.Abs(this.transform.localPosition.y - this.originalPosition.y) < this.allowedPositionPrecisionLoss ?
                     0 :
-                    (this.transform.position.y < this.originalPosition.y ?
+                    (this.transform.localPosition.y < this.originalPosition.y ?
                     1 :
                     -1
                     ));
@@ -108,7 +108,7 @@ public class DynamicObstacle : MonoBehaviour {
 
             if (this.activated)
             {
-                angularVelocity *= (Mathf.Abs(actualRotation - this.activatedRotation) < this.allowedPositionPrecisionLoss ?
+                angularVelocity *= (Mathf.Abs(actualRotation - this.activatedRotation) < this.allowedRotationPrecisionLoss ?
                     0 :
                     (actualRotation < this.activatedRotation ?
                     1 :
@@ -117,7 +117,7 @@ public class DynamicObstacle : MonoBehaviour {
             }
             else
             {
-                angularVelocity *= (Mathf.Abs(actualRotation - this.originalRotation) < this.allowedPositionPrecisionLoss ?
+                angularVelocity *= (Mathf.Abs(actualRotation - this.originalRotation) < this.allowedRotationPrecisionLoss ?
                     0 :
                     (actualRotation < this.originalRotation ?
                     1 :

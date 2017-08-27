@@ -6,6 +6,12 @@ public class ScoreManager : MonoBehaviour {
 
     public Canvas gui;
 
+    public GameObject playerYin;
+    public Vector2 yinFinalPosition;
+
+    public GameObject playerYang;
+    public Vector2 yangFinalPosition;
+
     private int score;
 
     private bool yinOk = false;
@@ -26,24 +32,22 @@ public class ScoreManager : MonoBehaviour {
 
     public void setYinOk()
     {
+        Debug.Log("Yin Ok");
+        this.playerYin.GetComponent<PlayerController>().setCannotMove();
+        this.playerYin.transform.localPosition = this.yinFinalPosition;
         this.yinOk = true;
-    }
-
-    public void setYinNotOk()
-    {
-        this.yinOk = false;
+        this.tryWonGame();
     }
 
     public void setYangOk()
     {
+        Debug.Log("Yang Ok");
+        this.playerYang.GetComponent<PlayerController>().setCannotMove();
+        this.playerYang.transform.localPosition = this.yangFinalPosition;
         this.yangOk = true;
+        this.tryWonGame();
     }
-
-    public void setYangNotOk()
-    {
-        this.yangOk = false;
-    }
-
+    
     public void loseGame()
     {
         Debug.Log("Lose");

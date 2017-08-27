@@ -13,7 +13,7 @@ public class CameraVerticalFollower : MonoBehaviour {
     public float animationSpeed = 10f;
 
     private bool isInAnimation = true;
-    private float allowedPrecisionLoss = 0.01f;
+    private float allowedPrecisionLoss = 0.05f;
 
     private void launchAnimation()
     {
