@@ -7,7 +7,9 @@ public class AnimateCloud : MonoBehaviour {
 
 	public Vector2 begin;
 	public float end;
-	public Vector2 scale;
+    public bool autoScale;
+    public bool autoRandY;
+    public Vector2 scale;
 	private Rigidbody2D rb;
 	private SpriteRenderer sr;
 	public Sprite[] cloudArray = new Sprite[5];
@@ -31,15 +33,27 @@ public class AnimateCloud : MonoBehaviour {
 	}
 
 	Vector3 getBegin(){
-		return new Vector3 (Random.Range (this.begin.x - 3, this.begin.x + 2),
-			Random.Range (this.begin.y - 2, this.begin.y + 4),
-			0);
-	}
+        if (this.autoRandY)
+        {
+            return new Vector3(Random.Range(this.begin.x - 3, this.begin.x + 2),
+            Random.Range(this.begin.y - 2, this.begin.y + 4),
+            0);
+        }
+        return new Vector3(Random.Range(this.begin.x - 3, this.begin.x + 2),
+           this.begin.y,
+            0);
+    }
 
 	Vector3 getScale(){
-		float ratio = Random.Range (0.5f, 0.8f);
-		return new Vector3 ( this.scale.x * ratio,
-			 this.scale.y * ratio,
-			1f);
-	}
+        if (autoScale == true)
+        {
+            float ratio = Random.Range(0.5f, 0.8f);
+            return new Vector3(this.scale.x * ratio,
+                 this.scale.y * ratio,
+                1f);
+        }
+        return new Vector3(this.scale.x,
+                 this.scale.y,
+                1f);
+    }
 }

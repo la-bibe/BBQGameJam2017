@@ -6,6 +6,11 @@ TagManager:
   tags:
   - ObstacleYang
   - ObstacleYin
+  - RiceBowl1
+  - RiceBowl2
+  - RiceBowl3
+  - RiceBowl4
+  - RiceBowl5
   layers:
   - Default
   - TransparentFX
