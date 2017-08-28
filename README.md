@@ -1,9 +1,21 @@
 # BBQGameJam2017
 
-## Pour git
+## For git
 
-Ne travaillez pas sur master!
+### Branches
 
-Vous créez un branche à partir de master que vous mettez à jour régulièrement et quand vous avez fini la feature: PR sur master.
+**_Never_ work on master**
 
-C'est un rush, du coup les features doivent être aussi petites que possible pour pouvoir se baser dessus le plus rapidement possible.
+Create a branch from master and merge master when you need it or before submitting the PR for review.
+
+Naming of the branch in spinal-case: `name-of-the-branch`
+
+### Pull Requests
+
+When you push the first commit of your branch, create a WIP Pull Request to master.
+
+Name of the PR: `[TAG] Name of the branch`
+
+The tag can be the followings:
+* `WIP` standing for `Work in Progress`
+* `RFR` standing for `Ready for Review`
